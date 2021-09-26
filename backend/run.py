@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from service import create_app
+from api import create_app
 
 app = create_app()
 

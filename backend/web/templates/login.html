@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div>
+        <h2 class="text-center">Войти</h2>
+        {% if message %}
+            <div class="alert alert-danger my-1" role="alert">{{ message }}</div>
+        {% endif %}
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="inn">ИНН</label>
+                <input type="text" class="form-control" name="inn">
+            </div>
+            <button type="submit" class="btn btn-primary mt-1">Войти</button>
+        </form>
+    </div>
+{% endblock %}

@@ -19,7 +19,7 @@ def get_inn_data(inn_number):
 
 
 def get_auction_id_data(auction_id):
-    with open("service/database/auctions.json", encoding="utf8") as f:
+    with open("api/database/auctions.json", encoding="utf8") as f:
         auctions = json.load(f)
     for item in auctions.get("data", []):
         if str(item["id"]) == str(auction_id):

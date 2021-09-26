@@ -1,6 +1,6 @@
 import json
 
-path = "service/database/data.json"
+path = "api/database/data.json"
 
 
 class Periodicity:

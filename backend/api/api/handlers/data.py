@@ -1,8 +1,8 @@
 from flask import Blueprint, jsonify, abort
 from flask_restful import Resource, Api
 
-from service.tools.api import get_inn_data, get_auction_id_data
-from service.database.operations import Periodicity
+from api.tools.api import get_inn_data, get_auction_id_data
+from api.database.operations import Periodicity
 
 blueprint = Blueprint(
     "data_resource",
