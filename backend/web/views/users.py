@@ -56,9 +56,13 @@ def login():
 def lk():
     inn = request.args.get("inn")
 
-    periodicity_data = ApiGet.make_request("predictions", "periodicity", inn)
-    if not periodicity_data:
-        return
-    data = periodicity_data.json()
+    message = ""
 
-    return render_template("lk.html", title="Личный кабинет", records=data["records"])
+    periodicity_res = ApiGet.make_request("predictions", "periodicity", inn)
+    if periodicity_res.status_code == 404:
+        message = periodicity_res.message
+        records = []
+    else:
+        records = periodicity_res.json()["records"]
+
+    return render_template("lk.html", title="Личный кабинет", records=records, message=message)

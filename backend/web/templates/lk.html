@@ -3,10 +3,13 @@
 {% block content %}
     <div>
         <h2 class="text-center">Рекомендации</h2>
+        {% if message %}
+            <div class="alert alert-danger my-1" role="alert">{{ message }}</div>
+        {% endif %}
         <div class="m-1">Предложения закупок на следующие две недели:</div>
     <ul class="list-group">
         {% for item in records %}
-            <li class="list-group-item">{{ item["category_name"] }}</li>
+            <li class="list-group-item">{{ item }}</li>
         {% endfor %}
     </ul>
     </div>

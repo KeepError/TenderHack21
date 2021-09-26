@@ -1,5 +1,7 @@
 import json
 
+from ml import ml_module
+
 path = "api/database/data.json"
 
 
@@ -20,8 +22,12 @@ class Periodicity:
 
     @classmethod
     def get_records_by_inn(cls, inn_number):
-        data = cls.get_data()
-        for item in data:
-            if str(item["inn"]) == str(inn_number):
-                return item["records"]
-        return None
+        try:
+            data = ml_module.get_categories(inn_number)
+        except AssertionError as e:
+            return e.message
+        # data = cls.get_data()
+        # for item in data:
+        #     if str(item["inn"]) == str(inn_number):
+        #         return item["records"]
+        return data
