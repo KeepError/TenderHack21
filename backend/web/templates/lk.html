@@ -3,9 +3,11 @@
 {% block content %}
     <div>
         <h2 class="text-center">Рекомендации</h2>
-        <div>Предложения закупок на следующие две недели:</div>
+        <div class="m-1">Предложения закупок на следующие две недели:</div>
+    <ul class="list-group">
         {% for item in records %}
-            <div>{{ item["category_name"] }}</div>
+            <li class="list-group-item">{{ item["category_name"] }}</li>
         {% endfor %}
+    </ul>
     </div>
 {% endblock %}
