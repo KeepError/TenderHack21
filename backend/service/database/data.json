@@ -1,0 +1,17 @@
+{
+  "periodicity": [
+    {
+      "inn": "291101608569",
+      "records": [
+        {
+          "category_name": "Медицинские салфетки",
+          "kpgz_code": "01.01.01"
+        },
+        {
+          "category_name": "Тест тестович",
+          "kpgz_code": "02.02.02"
+        }
+      ]
+    }
+  ]
+}
